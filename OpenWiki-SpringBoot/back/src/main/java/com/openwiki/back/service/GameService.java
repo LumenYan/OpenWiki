@@ -1,6 +1,6 @@
 package com.openwiki.back.service;
 
-import com.openwiki.back.model.Game;
+import com.openwiki.back.model.Games;
 import com.openwiki.back.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,15 +13,15 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository;
 
-    public List<Game> getAllGames() {
+    public List<Games> getAllGames() {
         return gameRepository.findAll();
     }
 
-    public Game getGameById(Long id) {
+    public Games getGameById(Long id) {
         return gameRepository.findById(id).orElse(null);
     }
 
-    public Game saveGame(Game game) {
+    public Games saveGame(Games game) {
         return gameRepository.save(game);
     }
 
